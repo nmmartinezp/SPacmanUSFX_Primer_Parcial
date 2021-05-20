@@ -114,3 +114,22 @@ Pacman* TileGraph::getPacman()
 	return nullptr;
 }
 
+Pacman2* TileGraph::getPacman2()
+{
+	for (auto ivtg = vectorTilesGraph.begin(); ivtg != vectorTilesGraph.end(); ++ivtg) {
+		if ((*ivtg)->getPacman2() != nullptr) {
+			return (*ivtg)->getPacman2();
+		}
+	}
+
+	/*for (unsigned int i = 0; i < vectorTilesGraph.size(); i++) {
+
+		Tile* tileNuevo = vectorTilesGraph[i];
+
+		if (tileNuevo->getPacman() != nullptr)
+			return tileNuevo->getPacman();
+	}*/
+
+	return nullptr;
+}
+

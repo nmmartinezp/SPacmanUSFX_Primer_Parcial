@@ -27,6 +27,7 @@
     <ClCompile Include="MapGenerator.cpp" />
     <ClCompile Include="Moneda.cpp" />
     <ClCompile Include="Pacman.cpp" />
+    <ClCompile Include="Pacman2.cpp" />
     <ClCompile Include="Pared.cpp" />
     <ClCompile Include="Pila.cpp" />
     <ClCompile Include="Texture.cpp" />
@@ -44,6 +45,7 @@
     <ClInclude Include="Moneda.h" />
     <ClInclude Include="MoveDirection.h" />
     <ClInclude Include="Pacman.h" />
+    <ClInclude Include="Pacman2.h" />
     <ClInclude Include="Pared.h" />
     <ClInclude Include="Pila.h" />
     <ClInclude Include="Texture.h" />

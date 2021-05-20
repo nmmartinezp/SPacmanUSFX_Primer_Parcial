@@ -14,7 +14,7 @@
 
 using namespace std;
 
-class Pacman: public GameObject
+class Pacman2 : public GameObject
 {
 protected:
 	Tile* tileActual;
@@ -22,7 +22,7 @@ protected:
 
 	MoveDirection direccionActual;
 	MoveDirection direccionSiguiente;
-		
+
 	// Velocidad en eje X e Y
 	int velocidadX;
 	int velocidadY;
@@ -36,7 +36,7 @@ protected:
 	TextureAnimation* texturaAnimacion;
 public:
 	//Constructores y destructores
-	Pacman(Tile* _tile, Texture* _texturaPacman, int _posicionX, int _posicionY, int _ancho, int _alto, int _anchoPantalla, int _altoPantalla, int _velocidadPatron);
+	Pacman2(Tile* _tile, Texture* _texturaPacman2, int _posicionX, int _posicionY, int _ancho, int _alto, int _anchoPantalla, int _altoPantalla, int _velocidadPatron);
 
 	//~Pacman();
 

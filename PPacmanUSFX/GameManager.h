@@ -10,6 +10,7 @@
 #include <windows.h>
 
 #include "Pacman.h"
+#include "Pacman2.h"
 #include "Fantasma.h"
 #include "Fruta.h"
 #include "Moneda.h"

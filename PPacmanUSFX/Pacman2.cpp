@@ -1,10 +1,10 @@
 #include <stdio.h>
-#include "Pacman.h"
-Pacman::Pacman(Tile* _tile, Texture* _texturaPacman, int _posicionX, int _posicionY, int _ancho, int _alto, int _anchoPantalla, int _altoPantalla, int _velocidadPatron) :
-	GameObject(_texturaPacman, _posicionX, _posicionY, _ancho, _alto, _anchoPantalla, _altoPantalla)
+#include "Pacman2.h"
+Pacman2::Pacman2(Tile* _tile, Texture* _texturaPacman2, int _posicionX, int _posicionY, int _ancho, int _alto, int _anchoPantalla, int _altoPantalla, int _velocidadPatron) :
+	GameObject(_texturaPacman2, _posicionX, _posicionY, _ancho, _alto, _anchoPantalla, _altoPantalla)
 {
 	texturaAnimacion = new TextureAnimation();
-	texturaAnimacion->setTexture(_texturaPacman);
+	texturaAnimacion->setTexture(_texturaPacman2);
 	texturaAnimacion->addCuadroAnimacion("izquierda", new SDL_Rect({ 0, 0, 25, 25 }));
 	texturaAnimacion->addCuadroAnimacion("izquierda", new SDL_Rect({ 25, 0, 25, 25 }));
 	texturaAnimacion->addCuadroAnimacion("derecha", new SDL_Rect({ 0, 25, 25, 25 }));
@@ -18,7 +18,7 @@ Pacman::Pacman(Tile* _tile, Texture* _texturaPacman, int _posicionX, int _posici
 	tileSiguiente = nullptr;
 
 	if (tileActual != nullptr) {
-		tileActual->setPacman(this);
+		tileActual->setPacman2(this);
 
 		posicionX = tileActual->getPosicionX() * Tile::anchoTile;
 		posicionY = tileActual->getPosicionY() * Tile::altoTile;
@@ -40,57 +40,53 @@ Pacman::Pacman(Tile* _tile, Texture* _texturaPacman, int _posicionX, int _posici
 	posicionYEnTextura = 0;
 }
 
-void Pacman::setTile(Tile* _tileNuevo) {
-	
+void Pacman2::setTile(Tile* _tileNuevo) {
+
 	if (tileActual != nullptr) {
-		tileActual->setPacman(nullptr);
+		tileActual->setPacman2(nullptr);
 	}
 
 	tileActual = _tileNuevo;
 
 	if (tileActual != nullptr) {
-		tileActual->setPacman(this);
-	
+		tileActual->setPacman2(this);
+
 		posicionX = tileActual->getPosicionX() * Tile::anchoTile;
 		posicionY = tileActual->getPosicionY() * Tile::altoTile;
 	}
 
 }
 
-void Pacman::handleEvent(SDL_Event* event)
+void Pacman2::handleEvent(SDL_Event* event)
 {
 	if (event->type == SDL_KEYDOWN && event->key.repeat == 0) {
 		switch (event->key.keysym.sym)
 		{
 			// Move up
-		case SDLK_UP:
-			direccionSiguiente = MOVE_UP; break;
+		case SDLK_w: direccionSiguiente = MOVE_UP; break;
 
 			// Move down
-		case SDLK_DOWN:
-			direccionSiguiente = MOVE_DOWN; break;
+		case SDLK_s: direccionSiguiente = MOVE_DOWN; break;
 
 			// Move left
-		case SDLK_LEFT:
-			direccionSiguiente = MOVE_LEFT; break;
+		case SDLK_a: direccionSiguiente = MOVE_LEFT; break;
 
 			// Move right
-		case SDLK_RIGHT:
-			direccionSiguiente = MOVE_RIGHT; break;
+		case SDLK_d: direccionSiguiente = MOVE_RIGHT; break;
 		}
 	}
 }
 
-bool Pacman::tratarDeMover(MoveDirection _direccionNueva)
+bool Pacman2::tratarDeMover(MoveDirection _direccionNueva)
 {
 	Tile* tileDestino = nullptr;
 
 	// Retorna el tile destino dependiendo de la direccion de movimiento
-	
+
 	switch (_direccionNueva)
 	{
 	case MOVE_UP:
-		tileDestino = tileGraph->getTileEn(tileActual->getPosicionX(), tileActual->getPosicionY()- 1);
+		tileDestino = tileGraph->getTileEn(tileActual->getPosicionX(), tileActual->getPosicionY() - 1);
 		break;
 	case MOVE_DOWN:
 		tileDestino = tileGraph->getTileEn(tileActual->getPosicionX(), tileActual->getPosicionY() + 1);
@@ -120,7 +116,7 @@ bool Pacman::tratarDeMover(MoveDirection _direccionNueva)
 	return true;
 }
 
-void Pacman::update()
+void Pacman2::update()
 {
 	//
 	//// Check for collision with point
@@ -159,7 +155,7 @@ void Pacman::update()
 		switch (direccionActual)
 		{
 		case MOVE_UP:
-			posicionY  = std::max(posicionY - velocidadPatron, tileSiguiente->getPosicionY() * Tile::altoTile);
+			posicionY = std::max(posicionY - velocidadPatron, tileSiguiente->getPosicionY() * Tile::altoTile);
 			break;
 		case MOVE_DOWN:
 			posicionY = std::min(posicionY + velocidadPatron, tileSiguiente->getPosicionY() * Tile::altoTile);
@@ -180,11 +176,11 @@ void Pacman::update()
 	}
 }
 
-void Pacman::render()
+void Pacman2::render()
 {
 	SDL_Rect* cuadroAnimacion = new SDL_Rect();
 
-	switch (direccionActual){
+	switch (direccionActual) {
 	case MOVE_UP:
 		cuadroAnimacion = texturaAnimacion->getCuadrosAnimacion("arriba")[numeroFrame];
 		break;
