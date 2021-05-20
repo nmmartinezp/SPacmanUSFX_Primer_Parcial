@@ -69,6 +69,10 @@ bool MapGenerator::load(string path)
 				objetoNuevo = new Fantasma(tileNuevo, textureManager->getTexture("fantasma4"), x * 25, y * 25, 25, 25, anchoPantalla, altoPantalla, 1);
 				objetoNuevo->setParametrosAnimacion(4);
 				break;
+			case 'h':
+				objetoNuevo = new Bomberman(tileNuevo, textureManager->getTexture("bomberman"), x * 25, y * 25, 25, 25, anchoPantalla, altoPantalla, 1);
+				objetoNuevo->setParametrosAnimacion(2);
+				break;
 			}
 
 			// If the object was created, add it to the vector

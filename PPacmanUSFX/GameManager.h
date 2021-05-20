@@ -12,6 +12,7 @@
 #include "Pacman.h"
 #include "Pacman2.h"
 #include "Fantasma.h"
+#include "Bomberman.h"
 #include "Fruta.h"
 #include "Moneda.h"
 #include "Texture.h"

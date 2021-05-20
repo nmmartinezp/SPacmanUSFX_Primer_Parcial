@@ -9,6 +9,7 @@ private:
 	map<string, Texture*> mapTexturas;
 
 	const string pathPacman = "Resources/PacMan.bmp";
+	const string pathBomberman = "Resources/Bomberman.png";
 	const string pathFantasma1 = "Resources/Blinky.bmp";
 	const string pathFantasma2 = "Resources/Clyde.bmp";
 	const string pathFantasma3 = "Resources/Inkey.bmp";
@@ -19,6 +20,7 @@ private:
 	const string pathPared = "Resources/wall.bmp";
 
 	Texture* pacmanTexture;
+	Texture* bombermanTexture;
 	Texture* fantasma1Texture;
 	Texture* fantasma2Texture;
 	Texture* fantasma3Texture;

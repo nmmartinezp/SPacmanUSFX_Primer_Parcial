@@ -5,6 +5,9 @@ TextureManager::TextureManager()
 	pacmanTexture = new Texture();
 	pacmanTexture->loadFromImage(pathPacman);
 	addTexture("pacman", pacmanTexture);
+	bombermanTexture = new Texture();
+	bombermanTexture->loadFromImage(pathBomberman);
+	addTexture("bomberman", bombermanTexture);
 	fantasma1Texture = new Texture();
 	fantasma1Texture->loadFromImage(pathFantasma1);
 	addTexture("fantasma1", fantasma1Texture);

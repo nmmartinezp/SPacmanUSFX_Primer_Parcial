@@ -8,6 +8,7 @@ Tile::Tile() {
 	pacman = nullptr;
 	pacman2 = nullptr;
 	fantasma = nullptr;
+	bomberman = nullptr;
 	fruta = nullptr;
 	moneda = nullptr;
 	pared = nullptr;
@@ -20,6 +21,7 @@ Tile::Tile(int _x, int _y) {
 	pacman = nullptr;
 	pacman2 = nullptr;
 	fantasma = nullptr;
+	bomberman = nullptr;
 	fruta = nullptr;
 	moneda = nullptr;
 	pared = nullptr;

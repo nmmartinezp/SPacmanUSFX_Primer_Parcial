@@ -19,6 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Bomberman.cpp" />
     <ClCompile Include="Fantasma.cpp" />
     <ClCompile Include="Fruta.cpp" />
     <ClCompile Include="GameManager.cpp" />
@@ -37,6 +38,7 @@
     <ClCompile Include="TileGraph.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Bomberman.h" />
     <ClInclude Include="Fantasma.h" />
     <ClInclude Include="Fruta.h" />
     <ClInclude Include="GameManager.h" />

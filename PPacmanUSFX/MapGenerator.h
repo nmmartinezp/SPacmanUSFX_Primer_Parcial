@@ -9,6 +9,7 @@
 #include "Texture.h"
 #include "Moneda.h"
 #include "Fantasma.h"
+#include "Bomberman.h"
 #include "Pacman.h"
 #include "Pacman2.h"
 #include "Fruta.h"
