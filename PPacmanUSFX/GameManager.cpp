@@ -5,7 +5,7 @@ using namespace std;
 GameManager::GameManager() {
 	gWindow = nullptr;
 	gRenderer = nullptr;
-
+	time_creator = 0;
 	juego_en_ejecucion = true;
 }
 
@@ -15,7 +15,7 @@ int GameManager::onExecute() {
     }
 		
 	srand(time(nullptr));
-
+	
 	TileGraph tileGraphGM(20, 15);
 	textureManager = new TextureManager();
 	GameObject::tileGraph = &tileGraphGM;
@@ -33,6 +33,13 @@ int GameManager::onExecute() {
 			}
         }
 
+		time_creator++;
+		if (time_creator == 3600) {
+			generadorNivelJuego = new MapGenerator(&tileGraphGM, textureManager, SCREEN_WIDTH, SCREEN_HEIGHT);
+			generadorNivelJuego->load("Resources/mapa0.txt");
+			generadorNivelJuego->populate(actoresJuego);
+			time_creator = 0;
+		}
 		////Clear screen
 		SDL_SetRenderDrawColor(gRenderer, 0x00, 0x00, 0x00, 0x00);
 		SDL_RenderClear(gRenderer);

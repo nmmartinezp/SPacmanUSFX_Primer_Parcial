@@ -7,6 +7,7 @@
 
 #include <SDL.h>
 #include <SDL_image.h>
+#include <windows.h>
 
 #include "Pacman.h"
 #include "Fantasma.h"
@@ -28,6 +29,7 @@ class GameManager
 {
 private:
     bool juego_en_ejecucion;
+    int time_creator;
 
     //The window we'll be rendering to
     SDL_Window* gWindow;
